@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Class Files">
+      <UniqueIdentifier>{824f5a4a-0669-4611-a411-3172ab2a4031}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class Files\Class Headers">
+      <UniqueIdentifier>{0763f9ff-f69d-4aef-8338-dbe4117bde5e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\library\GLAD\src\glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Class Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_Program.cpp">
+      <Filter>Class Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer.cpp">
+      <Filter>Class Files</Filter>
+    </ClCompile>
+    <ClCompile Include="support_data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Collector.cpp">
+      <Filter>Class Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CellsManager.cpp">
+      <Filter>Class Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tetromino.cpp">
+      <Filter>Class Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MovableObject.cpp">
+      <Filter>Class Files</Filter>
+    </ClCompile>
+    <ClCompile Include="testing.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="support_main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FS_Source_test.frag">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="VS_Source_test.vert">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="FS_Source.frag">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="VS_Source.vert">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="common_lib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Class Files\Class Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_Program.h">
+      <Filter>Class Files\Class Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexArray.h">
+      <Filter>Class Files\Class Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Buffer.h">
+      <Filter>Class Files\Class Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="const_expr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tetromino.h">
+      <Filter>Class Files\Class Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitCell.h">
+      <Filter>Class Files\Class Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Class Files\Class Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CellsClub.h">
+      <Filter>Class Files\Class Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CellsManager.h">
+      <Filter>Class Files\Class Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="type_decl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MovableObject.h">
+      <Filter>Class Files\Class Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Collector.h">
+      <Filter>Class Files\Class Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="testing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tank.h">
+      <Filter>Class Files\Class Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
