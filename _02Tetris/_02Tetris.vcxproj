@@ -153,8 +153,9 @@
     <ClCompile Include="Tetromino.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="FS_Source.frag" />
-    <None Include="VS_Source.vert" />
+    <None Include="FragmentShader.glsl" />
+    <None Include="readme.md" />
+    <None Include="VertexShader.glsl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Buffer.h" />

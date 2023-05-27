@@ -99,6 +99,7 @@ namespace CommonDefs {
 
 		delete tetroCoat;
 		tetroCoat = nullptr;
+		if (TETRO_STATE.failed_to_fire) originalTetro = nullptr;
 		return;
 	}
 	
@@ -234,6 +235,7 @@ namespace CommonDefs {
 		Tetromino<1>* bullet = nullptr;
 		for (;;) {
 			try {
+				//try to shoot bullet
 				bullet = newTank->Fire();
 				cells.Add(bullet->GetCellPointers()[0]);
 				updateScreen();
@@ -247,6 +249,7 @@ namespace CommonDefs {
 				return;
 			}
 			catch (GLint) {
+				//if failed to shoot bullet, the tetro will be reflected 
 				TETRO_STATE.failed_to_fire = true;
 				TETRO_PROP.move_direction = CompassDirection(-TETRO_PROP.move_direction);
 
@@ -285,22 +288,20 @@ namespace CommonDefs {
 		if (_action == GLFW_RELEASE) return;
 
 		//press ENTER key when game is paused to quit game
-		if (_key == GLFW_KEY_ENTER) {
+		if (_key == GLFW_KEY_ESCAPE) {
 			glfwSetWindowShouldClose(win, GLFW_TRUE);
 		}
 
 		if (GAME_STATE.game_over) {
-			if (!glfwWindowShouldClose(win)) {
-				if (_key == GLFW_KEY_ESCAPE)
-					glfwSetWindowShouldClose(win, GLFW_TRUE);
-				if (_key == GLFW_KEY_R)
-					GAME_STATE.restarted = true;
-			}
+			/*
+			if (_key == GLFW_KEY_R)
+				GAME_STATE.restarted = true;
+			//*/
 			return;
 		}
 
 		//handle pressing ESC key for pausing game or exit when game over
-		if (_key == GLFW_KEY_ESCAPE) {
+		if (_key == GLFW_KEY_ENTER) {
 			GAME_STATE.paused = !GAME_STATE.paused;
 			return;
 		}

@@ -59,10 +59,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="FS_Source.frag">
+    <None Include="FragmentShader.glsl">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="VS_Source.vert">
+    <None Include="VertexShader.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="readme.md">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

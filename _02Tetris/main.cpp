@@ -33,7 +33,7 @@ GameState GAME_STATE{ 0.75, false, false };
 //BOOL removeConsole = ShowWindow(GetConsoleWindow(), SW_HIDE);
 
 #ifndef TEST
-int CALLBACK WinMain(
+int WinMain(
 	HINSTANCE   hInstance,
 	HINSTANCE   hPrevInstance,
 	LPSTR       lpCmdLine,
@@ -69,8 +69,8 @@ int CALLBACK WinMain(
 
 	Shader::Program prog;
 	prog.AttachShaders(
-		Shader(GL_VERTEX_SHADER, "VS_Source.vert"),
-		Shader(GL_FRAGMENT_SHADER, "FS_Source.frag"));
+		Shader(GL_VERTEX_SHADER, "VertexShader.glsl"),
+		Shader(GL_FRAGMENT_SHADER, "FragmentShader.glsl"));
 	prog.Use();
 
 	VertexArray VAO;
@@ -126,7 +126,7 @@ int CALLBACK WinMain(
 		 }
 
 		 double now = 0.0;
-		 while (TETRO_STATE.failed_to_fire ? false : originalTetro != nullptr) {
+		 while (originalTetro != nullptr) {
 
 			 if (!TETRO_STATE.fired) {
 				 now = glfwGetTime();
