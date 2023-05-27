@@ -51,7 +51,7 @@
     <ClCompile Include="MovableObject.cpp">
       <Filter>Class Files</Filter>
     </ClCompile>
-    <ClCompile Include="testing.cpp">
+    <ClCompile Include="test.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="support_main.cpp">
@@ -59,12 +59,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="FS_Source_test.frag">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="VS_Source_test.vert">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="FS_Source.frag">
       <Filter>Resource Files</Filter>
     </None>
@@ -115,7 +109,7 @@
     <ClInclude Include="Collector.h">
       <Filter>Class Files\Class Headers</Filter>
     </ClInclude>
-    <ClInclude Include="testing.h">
+    <ClInclude Include="test.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Tank.h">

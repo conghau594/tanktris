@@ -109,7 +109,7 @@
       <AdditionalIncludeDirectories>D:\LearningC\library\glfw-3.3.8.bin.WIN64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>D:\LearningC\library\glfw-3.3.8.bin.WIN64\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glfw3.lib;opengl32.lib;user32.lib;kernel32.lib;gdi32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -128,7 +128,7 @@
       <AdditionalIncludeDirectories>D:\LearningC\library\glfw-3.3.8.bin.WIN64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -149,14 +149,12 @@
     <ClCompile Include="Shader_Program.cpp" />
     <ClCompile Include="support_data.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="testing.cpp" />
+    <ClCompile Include="test.cpp" />
     <ClCompile Include="Tetromino.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FS_Source.frag" />
-    <None Include="FS_Source_test.frag" />
     <None Include="VS_Source.vert" />
-    <None Include="VS_Source_test.vert" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Buffer.h" />
@@ -170,7 +168,7 @@
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Shader_Program.h" />
     <ClInclude Include="Tank.h" />
-    <ClInclude Include="testing.h" />
+    <ClInclude Include="test.h" />
     <ClInclude Include="UnitCell.h" />
     <ClInclude Include="VertexArray.h" />
     <ClInclude Include="common_lib.h" />

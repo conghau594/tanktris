@@ -30,8 +30,16 @@ EntityState TETRO_STATE{ false };
 EntityProperty TETRO_PROP{ CompassDirection::UNDEFINED_DIRECTION, DefaultShape::UNDEFINED_SHAPE };
 GameState GAME_STATE{ 0.75, false, false };
 
+//BOOL removeConsole = ShowWindow(GetConsoleWindow(), SW_HIDE);
+
 #ifndef TEST
-int main(void) {
+int CALLBACK WinMain(
+	HINSTANCE   hInstance,
+	HINSTANCE   hPrevInstance,
+	LPSTR       lpCmdLine,
+	int         nCmdShow
+){
+
 	if (!glfwInit()) {
 		std::cerr << "ERROR!... Failed to initialize GLFW library\n";
 		exit(EXIT_FAILURE);

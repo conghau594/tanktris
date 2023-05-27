@@ -2,7 +2,7 @@
 #define UNIT_CELL_H
 
 #include "common_lib.h"
-#include "testing.h"
+#include "test.h"
 
 /* class definition */
 namespace CommonDefs {
