@@ -65,9 +65,7 @@
     <None Include="VertexShader.glsl">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="readme.md">
-      <Filter>Resource Files</Filter>
-    </None>
+    <None Include="..\readme.md" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common_lib.h">

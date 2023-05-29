@@ -119,9 +119,9 @@ int WinMain(
 
 		 }
 
+		 updateScreen();
 		 if (GAME_STATE.game_over) {
 			 GAME_STATE.paused = true;
-			 updateScreen();
 			 delete originalTetro;
 			 break;
 		 }

@@ -153,8 +153,8 @@
     <ClCompile Include="Tetromino.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\readme.md" />
     <None Include="FragmentShader.glsl" />
-    <None Include="readme.md" />
     <None Include="VertexShader.glsl" />
   </ItemGroup>
   <ItemGroup>
