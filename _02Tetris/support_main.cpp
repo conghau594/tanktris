@@ -19,7 +19,7 @@ namespace CommonDefs {
 	GLint indicesOfFullLines[4];	//array of indices of the line that is full of cells in ascending order
 	GLint minLineIndex = VERTICES_NUMBER_IN_A_ROW;
 
-	void hangOn(double _Sec);
+	//void hangOn(double _Sec);
 	void updateScreen(void);
 
 	/* group of functions for handling the event when a cell lands on side */
@@ -57,24 +57,6 @@ namespace CommonDefs {
 
 	}
 
-	//wait a second
-	void hangOn(double _Sec) {
-		if (glfwWindowShouldClose(win)) return;
-		if (GAME_STATE.game_over) return;
-
-		double now = glfwGetTime();
-		while (glfwGetTime() < now + _Sec) {
-			if (GAME_STATE.paused) {
-				_Sec -= (glfwGetTime() - now);
-				while (GAME_STATE.paused) {
-					glfwPollEvents();
-					if (glfwWindowShouldClose(win)) return;
-				}
-			}
-		}
-		return;
-	}
-
 	/********** group of functions for handling the event when a cell lands on side **********/
 	void handleCellLandOnEvent(void) {
 		GLint indexOfLine = 0;
@@ -96,10 +78,9 @@ namespace CommonDefs {
 		}
 
 		moveLinesDownAfterScoring();
-
+		if (tetroCoat == originalTetro) originalTetro = nullptr;
 		delete tetroCoat;
 		tetroCoat = nullptr;
-		if (TETRO_STATE.failed_to_fire) originalTetro = nullptr;
 		return;
 	}
 	
@@ -134,14 +115,14 @@ namespace CommonDefs {
 
 				//erase the removed cells
 				updateScreen();
-				hangOn(0.01);
+				Sleep(DWORD(10));
 			}
 
 			delete lines[indexOfLine];
 			lines[indexOfLine] = nullptr;
 
 			putFullLineIndexToArr(indexOfLine);
-			hangOn(0.05);
+			//Sleep(50);
 		}
 		return;
 	}
@@ -149,6 +130,8 @@ namespace CommonDefs {
 	void moveLinesDownAfterScoring(void) {
 		//move remaining lines down if we got scored
 		for (GLuint i = 0; i < tetroCoat->GetCellsNumber(); ++i) {
+			Sleep(DWORD(50));
+
 			if (indicesOfFullLines[i] == -1) break;
 			if (lines[indicesOfFullLines[i] - 1] == nullptr) break;
 
@@ -165,7 +148,6 @@ namespace CommonDefs {
 			++minLineIndex;
 			//draw the effect of dropping
 			updateScreen();
-			hangOn(0.075);
 		}
 		return;
 	}
@@ -259,8 +241,7 @@ namespace CommonDefs {
 					updateScreen();
 				}
 				catch (GLint) {
-					GAME_STATE.game_over = true;
-					GAME_STATE.paused = true;
+					handleCellLandOnEvent();
 					return;
 				}
 			}
@@ -275,7 +256,7 @@ namespace CommonDefs {
 				cells.UpdateOffsets(tetroCoat->GetCellPointers(), tetroCoat->GetCellsNumber());
 				updateScreen();
 
-				hangOn(0.01);
+				Sleep(DWORD(10));
 			}
 			catch (GLint) {
 				handleCellLandOnEvent();
@@ -301,18 +282,18 @@ namespace CommonDefs {
 		}
 
 		//handle pressing ESC key for pausing game or exit when game over
-		if (_key == GLFW_KEY_ENTER) {
+		if (_key == GLFW_KEY_P) {
 			GAME_STATE.paused = !GAME_STATE.paused;
+			while(GAME_STATE.paused) glfwWaitEvents();
 			return;
 		}
 
 
 		if (GAME_STATE.paused) return;
 		//press P key to print state of location onto console (and pause game)
-		if (_key == GLFW_KEY_P) {
+		if (_key == GLFW_KEY_ENTER) {
 			system("cls");
 			printGameBoardOntoConsole();
-			GAME_STATE.paused = !GAME_STATE.paused;
 			return;
 		}
 

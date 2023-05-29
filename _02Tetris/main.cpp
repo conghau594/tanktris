@@ -5,7 +5,7 @@
 
 namespace CommonDefs {
 	//function from main_supporter.cpp
-	void hangOn(double _Sec);
+	//void hangOn(double _Sec);
 	void deleteCellPointers(void);
 	void keyPressCallback(GLFWwindow* _window, int _key, int _scancode, int _action, int _modes);
 	void updateScreen(void);
@@ -92,6 +92,7 @@ int WinMain(
 	constexpr GLuint DEBUT_INDEX = HALF_VIEWPORT_HEIGHT * VERTICES_NUMBER_IN_A_ROW + 2;
 
 //MAIN_PLAY:
+	double now = 0.0;
 	while (!GAME_STATE.game_over && !glfwWindowShouldClose(win)) {
 		 srand(static_cast<unsigned>(time(nullptr)));
 
@@ -125,7 +126,7 @@ int WinMain(
 			 break;
 		 }
 
-		 double now = 0.0;
+		 
 		 while (originalTetro != nullptr) {
 
 			 if (!TETRO_STATE.fired) {
@@ -145,10 +146,9 @@ int WinMain(
 					&& !GAME_STATE.game_over 
 					&& !glfwWindowShouldClose(win)) 
 			 {
-				 glfwPollEvents();		//this function must be excuted before updating offsets arr				 
+				 glfwWaitEventsTimeout(GAME_STATE.speed * BASE_SPEED + now - glfwGetTime());		//this function must be excuted before updating offsets arr				 
 				 updateScreen();
 				 if (tetroCoat == nullptr) break;
-				 else hangOn(0.1);
 			 }
 			 
 			 if (TETRO_STATE.fired) continue;
@@ -162,7 +162,7 @@ int WinMain(
 			 }
 			 catch (GLint) {
 				 handleCellLandOnEvent();
-				 continue;
+				 break;
 			 }
 		 }
 		 //
@@ -170,7 +170,7 @@ int WinMain(
 
 	deleteCellPointers();
 	while (!glfwWindowShouldClose(win)) {
-		glfwPollEvents();
+		glfwWaitEvents();
 		/*
 		if (GAME_STATE.restarted) {
 			glClear(GL_COLOR_BUFFER_BIT);
